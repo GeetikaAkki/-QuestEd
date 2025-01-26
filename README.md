@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# QuestEd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Problem Statement
+Engineering students face numerous challenges that hinder their academic success and personal growth. These include:
 
-## Available Scripts
+- **Lack of Personalization:** Traditional learning methods fail to adapt to individual learning abilities and paces.
+- **Overwhelming Content:** Managing the vast volume of technical coursework is a struggle for many students.
+- **High Dropout Rates:** Academic pressure contributes to a significant number of students discontinuing their studies.
+- **Limited Peer Interaction:** Students lack adequate opportunities for collaboration and knowledge sharing.
+- **Neglect of Mental Health:** Stress and burnout affect students' academic performance and overall well-being.
 
-In the project directory, you can run:
+### Gap in Existing Solutions
 
-### `npm start`
+**For Students:**
+- Absence of tools that adapt content difficulty to individual skill levels (easy, medium, hard).
+- Lack of integrated support for student well-being.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**For Teachers:**
+- Limited platforms for sharing quality educational resources.
+- No feedback mechanisms to help refine teaching methods.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**The Need:**
+A platform that personalizes learning, fosters peer collaboration, gamifies engagement, and promotes student well-being.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Proposed Solution
+QuestEd is an ed-tech platform designed to simplify learning for engineering students while supporting teachers. It includes two dedicated portals:
 
-### `npm run build`
+1. **Student Portal**
+   - Students take an initial test to assess their knowledge and receive personalized courses and quizzes at three levels: easy, medium, and hard.
+   - Features include:
+     - Study materials in PDF format and embedded videos.
+     - Gamification elements like badges for completing courses and quizzes.
+     - A dashboard for tracking progress.
+     - A calendar displaying daily quizzes and schedules.
+     - Subject-specific chats for peer interaction and knowledge sharing.
+     - Real-time monitoring of student well-being through facial recognition, offering health tips.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Teacher Portal**
+   - Teachers can:
+     - Upload educational resources, such as videos and PDFs.
+     - Access pre-existing materials to enhance teaching.
+     - Track student performance and engagement.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### How It Solves the Problem
+- **Personalization:** Adaptive courses and quizzes cater to individual abilities, reducing overwhelm and boosting engagement.
+- **Content Management:** Organized topics with progress tracking ensure manageable learning.
+- **Retention:** Gamified features and personalized learning paths enhance confidence and reduce dropout rates.
+- **Well-Being Support:** Health tips and stress management suggestions foster balanced learning.
+- **Teacher Empowerment:** Streamlined resource sharing and access to analytics improve teaching strategies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Technical Approach
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Tech Stack
+- **Frontend:**
+  - React.js: For building an interactive and dynamic user interface.
+- **Backend:**
+  - Node.js and Express.js: To handle server-side logic and manage API routes.
+- **Database:**
+  - MongoDB: For storing user data, course progress, and resources.
+- **Additional Tools:**
+  - YouTube API: For embedding educational videos.
+  - Calendar API: To display and manage schedules and quizzes.
+  - Gemini API
+  - Fast API
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Feasibility & Scalability
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Feasibility:**
+- Leveraging widely adopted technologies ensures reliable development and deployment.
+- The platform’s architecture supports efficient handling of resources and secure data management.
 
-## Learn More
+**Scalability:**
+- Cloud hosting and scalable databases like MongoDB enable seamless handling of increased users.
+- Future feature expansion includes live classes, multilingual support, and advanced gamification elements.
+- Automation tools streamline content updates and user onboarding, supporting growth.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Impact and Benefits
 
-### Code Splitting
+**Tangible Benefits:**
+- Improved learning outcomes through personalized courses and adaptive quizzes.
+- Access to a comprehensive library of study materials and resources.
+- Enhanced student well-being with real-time health tips.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Intangible Benefits:**
+- Increased student motivation and engagement through gamification.
+- Stronger peer collaboration and knowledge sharing.
+- Teacher empowerment with a simplified resource-sharing process.
 
-### Analyzing the Bundle Size
+**Positive Effects:**
+- Empowers students to succeed academically.
+- Supports teachers in delivering impactful education.
+- Promotes innovative, scalable education solutions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Project Summary
+QuestEd is a holistic learning platform for engineering students and educators. By combining personalized content, peer collaboration, and mental well-being support, QuestEd simplifies learning and enhances academic success. With its student and teacher portals, the platform fosters engagement, resource sharing, and efficient teaching, ultimately creating a more inclusive and supportive learning environment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
