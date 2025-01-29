@@ -18,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"], 
 )
 
-genai.configure(api_key="AIzaSyC3UfzV8uf850hnMJAYRaW2oYtHlRa_Csg")
+genai.configure(api_key="") #key
 class ImageData(BaseModel):
     image: str 
 

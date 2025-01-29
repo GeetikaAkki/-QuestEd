@@ -14,7 +14,7 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-genai.configure(api_key="AIzaSyBTYWmSFi1V_KeXwveT_hveBbid7exLPb4") 
+genai.configure(api_key="") #key
 class QuestionRequest(BaseModel):
     question: str
 @app.post("/ask_question/")
