@@ -7,12 +7,14 @@ import AuthForm from './components/StudSign';
 import Dashboard from "./dashboard/Dashboard";
 import ComputerScience from "./dashboard/ComputerScience";
 import CourseDropdown from "./dashboard/CourseDropdown";
+import TeacherPortal from "./components/TeacherPortal";
+import CLang from "./learning/clang";
 import QuizTemplate from "./dashboard/QuizTemplate";
 import Wellbeing from "./dashboard/Wellbeing"; 
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const showSidebar = ["/dashboard", "/computer-science", "/course","/quiz", "/wellbeing"].includes(location.pathname);
+  const showSidebar = ["/dashboard", "/computer-science", "/course", "/quiz", "/wellbeing"].includes(location.pathname);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -35,9 +37,10 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/computer-science" element={<ComputerScience />} />
           <Route path="/course" element={<CourseDropdown />} />
+          <Route path="/teacher-portal" element={<TeacherPortal />} />
+          <Route path="/learning/c" element={<CLang />} />
           <Route path="/quiz" element={<QuizTemplate />} />
           <Route path="/wellbeing" element={<Wellbeing />} />
-
         </Routes>
       </Layout>
     </Router>
