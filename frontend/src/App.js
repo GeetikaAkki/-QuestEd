@@ -8,10 +8,11 @@ import Dashboard from "./dashboard/Dashboard";
 import ComputerScience from "./dashboard/ComputerScience";
 import CourseDropdown from "./dashboard/CourseDropdown";
 import QuizTemplate from "./dashboard/QuizTemplate";
+import Wellbeing from "./dashboard/Wellbeing"; 
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const showSidebar = ["/dashboard", "/computer-science", "/course","/quiz"].includes(location.pathname);
+  const showSidebar = ["/dashboard", "/computer-science", "/course","/quiz", "/wellbeing"].includes(location.pathname);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/computer-science" element={<ComputerScience />} />
           <Route path="/course" element={<CourseDropdown />} />
           <Route path="/quiz" element={<QuizTemplate />} />
+          <Route path="/wellbeing" element={<Wellbeing />} />
 
         </Routes>
       </Layout>
