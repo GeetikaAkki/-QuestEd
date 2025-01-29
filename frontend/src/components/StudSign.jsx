@@ -66,7 +66,7 @@ const AuthForm = () => {
       <nav style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
         <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#4B0082' }}>📚 QuestEd</div>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: '32px' }}>
-          <a href="#" style={{ textDecoration: 'none', color: 'black' }}>Home</a>
+          <a href="./" style={{ textDecoration: 'none', color: 'black' }}>Home</a>
           <a href="#" style={{ textDecoration: 'none', color: 'black' }}>About us</a>
           <a href="#" style={{ textDecoration: 'none', color: 'black' }}>Courses</a>
           <a href="#" style={{ textDecoration: 'none', color: 'black' }}>Contact us</a>
