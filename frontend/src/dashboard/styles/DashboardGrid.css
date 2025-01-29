@@ -1,0 +1,37 @@
+.dashboard-grid {
+    flex: 1;
+    padding: 24px;
+    margin-left: 256px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .card {
+    height: 200px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card.blue {
+    background-color: #4C7BF4;
+  }
+  
+  .card.green {
+    background-color: #2A7B6B;
+  }
+  
+  .card.pink {
+    background-color: #CD6D6D;
+  }
+  
+  .card.red {
+    background-color: #E85D5D;
+  }
+  
