@@ -7,7 +7,8 @@ import AuthForm from './components/StudSign';
 import Dashboard from "./dashboard/Dashboard";
 import ComputerScience from "./dashboard/ComputerScience";
 import CourseDropdown from "./dashboard/CourseDropdown";
-import QuizTemplate from "./dashboard/QuizTemplate";
+import TeacherPortal from "./components/TeacherPortal";
+import Feedback from "./components/Feedback";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -23,6 +24,8 @@ const Layout = ({ children }) => {
   );
 };
 
+
+
 const App = () => {
   return (
     <Router>
@@ -34,8 +37,8 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/computer-science" element={<ComputerScience />} />
           <Route path="/course" element={<CourseDropdown />} />
-          <Route path="/quiz" element={<QuizTemplate />} />
-
+          <Route path="/teacher-portal" element={<TeacherPortal/>}/>
+            <Route path="/feedback" element={<Feedback/>}/>
         </Routes>
       </Layout>
     </Router>

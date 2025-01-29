@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Pencil, Notebook } from 'lucide-react';
 import './StudSign.css';
 import { FaGoogle, FaApple, FaFacebook } from 'react-icons/fa';
+import Background from './Background';
+import './Background.css'
 
 
 const blinkKeyframes = `
@@ -60,6 +62,8 @@ const LogIn = () => {
   ];
 
   return (
+    <div>
+      <Background/>
     <div style={{ backgroundColor: '#FDF8EE', minHeight: '100vh', padding: '20px', position: 'relative' }}>
       <style>{blinkKeyframes}</style>
 
@@ -128,6 +132,7 @@ const LogIn = () => {
       {iconPositions.map((pos, index) => (
         <Icon key={index} position={pos} index={index} />
       ))}
+    </div>
     </div>
   );
 };
