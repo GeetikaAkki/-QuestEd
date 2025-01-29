@@ -1,0 +1,168 @@
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -10; /* Ensures it's always behind */
+}
+
+
+  
+  .shape {
+    position: absolute;
+    opacity: 0.2;
+    border: 2px solid;
+    animation: moveAndRotate 15s infinite ease-in-out;
+  }
+  
+  .shape-1 {
+    top: 80px;
+    left: 160px;
+    width: 48px;
+    height: 48px;
+    border-color: #FF7426;
+    animation-duration: 15s;
+  }
+  
+  .shape-2 {
+    top: 240px;
+    right: 320px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border-color: #4D2C5E;
+    animation-duration: 12s;
+  }
+  
+  .shape-3 {
+    bottom: 80px;
+    left: 240px;
+    width: 40px;
+    height: 40px;
+    border-color: #4D2C5E;
+    animation-duration: 20s;
+  }
+  
+  .shape-4 {
+    top: 160px;
+    right: 160px;
+    width: 64px;
+    height: 64px;
+    border-color: #FF7426;
+    animation-duration: 18s;
+  }
+  
+  /* Additional shapes spreading across the page */
+  .shape-5 {
+    top: 50px;
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-color: #FF7426;
+    animation-duration: 25s;
+    animation-delay: -5s;
+  }
+  
+  .shape-6 {
+    top: 300px;
+    right: 10%;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border-color: #4D2C5E;
+    animation-duration: 22s;
+    animation-delay: -2s;
+  }
+  
+  .shape-7 {
+    top: 200px;
+    left: 15%;
+    width: 16px;
+    height: 16px;
+    border-color: #FF7426;
+    animation-duration: 30s;
+    animation-delay: -3s;
+  }
+  
+  .shape-8 {
+    bottom: 100px;
+    left: 20%;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border-color: #4D2C5E;
+    animation-duration: 28s;
+    animation-delay: -1s;
+  }
+  
+  /* More small shapes added to further animate across the page */
+  .shape-9 {
+    top: 5%;
+    right: 25%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border-color: #FF7426;
+    animation-duration: 18s;
+    animation-delay: -6s;
+  }
+  
+  .shape-10 {
+    top: 60%;
+    left: 40%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border-color: #4D2C5E;
+    animation-duration: 24s;
+    animation-delay: -4s;
+  }
+  
+  .shape-11 {
+    bottom: 30px;
+    left: 80%;
+    width: 22px;
+    height: 22px;
+    border-color: #FF7426;
+    animation-duration: 35s;
+    animation-delay: -7s;
+  }
+  
+  .shape-12 {
+    top: 85%;
+    left: 60%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border-color: #4D2C5E;
+    animation-duration: 40s;
+    animation-delay: -10s;
+  }
+  
+  /* Keyframes for smoother, varied animation */
+  @keyframes moveAndRotate {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 0.2;
+    }
+    25% {
+      transform: translate(40px, -40px) rotate(90deg);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(0, 80px) rotate(180deg);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translate(-40px, 40px) rotate(270deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+      opacity: 0.2;
+    }
+  }
+  

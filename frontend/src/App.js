@@ -7,6 +7,7 @@ import AuthForm from './components/StudSign'; // Sign-in page content
 import Dashboard from "./dashboard/Dashboard"; // Dashboard content
 import ComputerScience from "./dashboard/ComputerScience"; // Computer Science content
 import CourseDropdown from "./dashboard/CourseDropdown"; // Courses dropdown content
+import TeacherPortal from "./components/TeacherPortal";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} /> {/* Directly rendering Dashboard */}
             <Route path="/computer-science" element={<ComputerScience />} />
             <Route path="/course" element={<CourseDropdown />} />
+            <Route path="/teacher-portal" element={<TeacherPortal/>}/>
           </Routes>
         </div>
       </div>
