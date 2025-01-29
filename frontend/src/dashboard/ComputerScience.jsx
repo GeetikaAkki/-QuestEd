@@ -6,7 +6,7 @@ const ComputerScience = () => {
   const navigate = useNavigate();
 
   const courses = [
-    { title: "C Programming", description: "Learn fundamentals of C programming", icon: <Code size={24} />, progress: "60%", path: "/learning/clang" },
+    { title: "C Programming", description: "Learn fundamentals of C programming", icon: <Code size={24} />, progress: "60%", path: "/learning/c" },
     { title: "C++ Programming", description: "Object-oriented programming with C++", icon: <Code size={24} />, progress: "45%", path: "/learning/cobjectlang" },
     { title: "Python", description: "Modern programming with Python", icon: <Code size={24} />, progress: "75%", path: "/learning/python" },
     { title: "Data Structures", description: "Advanced data structures implementation", icon: <Database size={24} />, progress: "30%", path: "/learning/dsa" },

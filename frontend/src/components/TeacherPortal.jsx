@@ -40,7 +40,7 @@ const TeacherPortal = () => {
 
       {/* Top Right Link to Course Page */}
 <div style={styles.topRightLink}>
-  <Link to="/course" style={{ textDecoration: 'none', color: 'black' }}>Home</Link>
+  <a href="./" style={{ textDecoration: 'none', color: 'black' }}>Home</a>
 </div>
 
 

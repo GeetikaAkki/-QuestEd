@@ -11,10 +11,11 @@ import TeacherPortal from "./components/TeacherPortal";
 import CLang from "./learning/clang";
 import QuizTemplate from "./dashboard/QuizTemplate";
 import Wellbeing from "./dashboard/Wellbeing"; 
+import Feedback from "./components/Feedback"
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const showSidebar = ["/dashboard", "/computer-science", "/course", "/quiz", "/wellbeing"].includes(location.pathname);
+  const showSidebar = ["/dashboard", "/computer-science", "/course", "/quiz", "/wellbeing", "/feedback"].includes(location.pathname);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/learning/c" element={<CLang />} />
           <Route path="/quiz" element={<QuizTemplate />} />
           <Route path="/wellbeing" element={<Wellbeing />} />
+          <Route path="/feedback" element={<Feedback />} />
         </Routes>
       </Layout>
     </Router>
