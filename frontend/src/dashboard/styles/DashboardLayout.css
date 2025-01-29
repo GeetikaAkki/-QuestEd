@@ -20,7 +20,6 @@ animation: float 20s linear infinite;
 opacity: 0.3;
 }
 
-/* Create different starting positions and animation durations for icons */
 .floating-icon:nth-child(odd) {
 animation-duration: 15s;
 }
@@ -33,7 +32,6 @@ animation-duration: 25s;
 animation-duration: 20s;
 }
 
-/* Position icons at different starting points */
 .floating-icon:nth-child(1) { left: 10%; top: -20px; }
 .floating-icon:nth-child(2) { left: 20%; top: -40px; animation-delay: 2s; }
 .floating-icon:nth-child(3) { left: 30%; top: -60px; animation-delay: 4s; }
@@ -67,7 +65,6 @@ animation-duration: 20s;
 }
 }
 
-/* DashboardGrid.css updates */
 .dashboard-grid {
 flex: 1;
 padding: 32px;

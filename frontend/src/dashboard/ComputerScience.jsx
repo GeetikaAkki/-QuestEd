@@ -62,8 +62,10 @@ const ComputerScience = () => {
               ></div>
             </div>
             <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>{course.progress} Complete</p>
-            <button 
+            <a 
+              href="./quiz"
               style={{ 
+                display: "inline-block",
                 marginTop: "16px", 
                 backgroundColor: "#FF8C00", 
                 color: "white", 
@@ -71,12 +73,12 @@ const ComputerScience = () => {
                 border: "none", 
                 borderRadius: "8px", 
                 cursor: "pointer", 
-                fontSize: "16px" 
+                fontSize: "16px",
+                textDecoration: "none"
               }}
-              onClick={() => course.path && navigate(course.path)}
             >
               Register
-            </button>
+            </a>
           </div>
         ))}
       </div>

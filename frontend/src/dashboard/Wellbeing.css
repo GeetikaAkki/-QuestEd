@@ -61,7 +61,6 @@
     font-size: 1.1rem;
   }
   
-  /* Background animations */
   .background-container {
     position: absolute;
     inset: 0;
@@ -76,7 +75,6 @@
     animation: moveAndRotate 15s infinite ease-in-out;
   }
   
-  /* Shape styles */
   .shape-1 { top: 80px; left: 160px; width: 48px; height: 48px; border-color: #FF7426; animation-duration: 15s; }
   .shape-2 { top: 240px; right: 320px; width: 32px; height: 32px; border-radius: 50%; border-color: #4C7BF4; animation-duration: 12s; }
   .shape-3 { bottom: 80px; left: 240px; width: 40px; height: 40px; border-color: #4C7BF4; animation-duration: 20s; }
@@ -119,7 +117,6 @@
     }
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .wellbeing-container {
       padding: 1rem;

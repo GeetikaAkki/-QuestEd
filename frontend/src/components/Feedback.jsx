@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import feedbackImage from "../images/image.png"
+import React, { useState } from 'react';
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState({
@@ -8,110 +7,162 @@ const Feedback = () => {
     features: 0,
     support: 0,
     recommend: 0,
-    comments: "",
-  })
+    comments: '',
+  });
 
   const questions = [
-    { id: "overall", label: "How satisfied are you with our service overall?" },
-    { id: "easeOfUse", label: "How easy was it to use our product?" },
-    { id: "features", label: "How well did our features meet your needs?" },
-    { id: "support", label: "How would you rate our customer support?" },
-    { id: "recommend", label: "How likely are you to recommend us to others?" },
-  ]
+    { id: 'overall', label: 'How satisfied are you with our service overall?' },
+    { id: 'easeOfUse', label: 'How easy was it to use our product?' },
+    { id: 'features', label: 'How well did our features meet your needs?' },
+    { id: 'support', label: 'How would you rate our customer support?' },
+    { id: 'recommend', label: 'How likely are you to recommend us to others?' },
+  ];
 
   const handleSliderChange = (id, value) => {
     setFeedback((prev) => ({
       ...prev,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = () => {
-    console.log("Feedback submitted:", feedback)
-    alert("Thank you for your feedback!")
-  }
+    console.log('Feedback submitted:', feedback);
+    alert('Thank you for your feedback!');
+  };
+
+  const getRatingColor = (value) => {
+    if (value <= 3) return '#EF4444';
+    if (value <= 7) return '#FCD34D';
+    return '#10B981';
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Left side: Feedback Form Container */}
-      <div className="w-2/3 p-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white shadow-xl rounded-2xl p-12">
-            <h1 className="text-3xl font-bold mb-8 text-gray-800">Student Feedback</h1>
+    <div style={containerStyle}>
+      <div style={formWrapperStyle}>
+        <h1 style={headerStyle}>Student Feedback</h1>
 
-            <div className="space-y-6">
-              {questions.map(({ id, label }) => (
-                <div key={id} className="mb-6">
-                  <label className="block text-gray-700 mb-2">{label}</label>
-                  <div className="relative">
-                    <input
-                      type="range"
-                      min="0"
-                      max="10"
-                      value={feedback[id]}
-                      onChange={(e) => handleSliderChange(id, Number.parseInt(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                    />
-                    <div className="flex justify-between mt-1">
-                      <span className="text-sm text-gray-600">☹️</span>
-                      <span className="text-sm text-gray-600">😊</span>
-                    </div>
-                    <div className="mt-1 text-gray-700">Selected: {feedback[id]}</div>
+        <div style={gridStyle}>
+          {questions.map(({ id, label }) => (
+            <div key={id} style={cardStyle}>
+              <label style={labelStyle}>{label}</label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  type="range"
+                  min="0"
+                  max="10"
+                  value={feedback[id]}
+                  onChange={(e) => handleSliderChange(id, parseInt(e.target.value))}
+                  style={{ ...sliderStyle, background: getRatingColor(feedback[id]) }}
+                />
+                <div style={sliderMetaStyle}>
+                  <span>{feedback[id] <= 3 ? '☹️' : feedback[id] <= 7 ? '😊' : '🤩'}</span>
+                  <div style={{ ...ratingBadgeStyle, backgroundColor: `${getRatingColor(feedback[id])}20 `}}>
+                    {feedback[id]}/10
                   </div>
                 </div>
-              ))}
-
-              <div>
-                <label className="block text-gray-700 mb-2">Additional Comments</label>
-                <textarea
-                  value={feedback.comments}
-                  onChange={(e) => setFeedback((prev) => ({ ...prev, comments: e.target.value }))}
-                  className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  rows={4}
-                  placeholder="Please share any additional feedback..."
-                />
               </div>
-
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 
-                         rounded-lg shadow-md hover:from-blue-600 hover:to-blue-700 
-                         transition-colors duration-300"
-              >
-                Submit Feedback
-              </button>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
 
-      {/* Right side: Floating Image */}
-      <div className="w-1/3 relative">
-        <div className="fixed top-1/4 right-16">
-          <img
-            src={feedbackImage || "/placeholder.svg"}
-            alt="Feedback illustration"
-            className="w-48 h-auto animate-bounce-slow"
+        <div style={{ marginTop: '24px' }}>
+          <textarea
+            value={feedback.comments}
+            onChange={(e) => setFeedback((prev) => ({ ...prev, comments: e.target.value }))}
+            style={textareaStyle}
+            placeholder="Please share any additional feedback..."
           />
         </div>
+
+        <div style={{ marginTop: '32px' }}>
+          <button onClick={handleSubmit} style={buttonStyle}>Submit Feedback</button>
+        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes bounce-slow {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 3s infinite ease-in-out;
-        }
-      `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default Feedback
+const containerStyle = {
+  minHeight: '100vh',
+  background: '#472758', 
+  padding: '32px',
+};
 
+const formWrapperStyle = {
+  maxWidth: '800px',
+  margin: '0 auto',
+  background: '#FF7426', 
+  borderRadius: '16px',
+  padding: '32px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+};
+
+const headerStyle = {
+  fontSize: '32px',
+  fontWeight: 'bold',
+  color: '#4B0082',
+  textAlign: 'center',
+  marginBottom: '24px',
+};
+
+const gridStyle = {
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: '16px',
+};
+
+const cardStyle = {
+  padding: '16px',
+  background: '#f9fafb',
+  borderRadius: '12px',
+  border: '1px solid #e5e7eb',
+};
+
+const labelStyle = {
+  display: 'block',
+  fontSize: '16px',
+  fontWeight: '600',
+  color: '#4B5563',
+  marginBottom: '8px',
+};
+
+const sliderStyle = {
+  width: '100%',
+  cursor: 'pointer',
+  margin: '16px 0',
+};
+
+const sliderMetaStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginTop: '8px',
+};
+
+const ratingBadgeStyle = {
+  padding: '4px 8px',
+  borderRadius: '8px',
+  color: '#333',
+  fontWeight: 'bold',
+};
+
+const textareaStyle = {
+  width: '100%',
+  padding: '12px',
+  borderRadius: '8px',
+  border: '1px solid #e5e7eb',
+  fontSize: '16px',
+};
+
+const buttonStyle = {
+  width: '100%',
+  padding: '12px',
+  backgroundColor: '#4B0082',
+  color: '#ffffff',
+  border: 'none',
+  borderRadius: '8px',
+  cursor: 'pointer',
+  fontWeight: 'bold',
+};
+
+export default Feedback;

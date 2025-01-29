@@ -5,7 +5,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -10; /* Ensures it's always behind */
+    z-index: -10; 
 }
 
 
@@ -54,7 +54,6 @@
     animation-duration: 18s;
   }
   
-  /* Additional shapes spreading across the page */
   .shape-5 {
     top: 50px;
     left: 10%;
@@ -98,7 +97,6 @@
     animation-delay: -1s;
   }
   
-  /* More small shapes added to further animate across the page */
   .shape-9 {
     top: 5%;
     right: 25%;
@@ -142,7 +140,6 @@
     animation-delay: -10s;
   }
   
-  /* Keyframes for smoother, varied animation */
   @keyframes moveAndRotate {
     0% {
       transform: translate(0, 0) rotate(0deg);

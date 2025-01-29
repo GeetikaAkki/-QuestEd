@@ -49,7 +49,6 @@ const TeacherPortal = () => {
         <img src={logo} alt="QuestEd Logo" style={styles.logo} />
 
         <div style={styles.cardsContainer}>
-          {/* Upload Material Card */}
           <div style={styles.card}>
             <div style={styles.header}>
               <h2 style={styles.title}>📚 Upload Material</h2>
@@ -95,7 +94,6 @@ const TeacherPortal = () => {
             </button>
           </div>
 
-          {/* Feedback Form Card */}
           <div style={styles.card}>
             <div style={styles.header}>
               <h2 style={styles.title}>📝 Submit Feedback</h2>
@@ -157,13 +155,13 @@ const styles = {
   },
   cardsContainer: {
     display: 'flex',
-    gap: '50px', // Increased spacing between cards
+    gap: '50px', 
   },
   card: {
     backgroundColor: '#FFFFFF',
-    padding: '40px', // Increased padding for a larger size
+    padding: '40px',
     borderRadius: '24px',
-    width: '500px', // Increased card width
+    width: '500px', 
     textAlign: 'center',
     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
     zIndex: 2,
@@ -182,38 +180,38 @@ const styles = {
   },
   dropdown: {
     flex: 1,
-    padding: '14px', // Slightly larger padding
+    padding: '14px', 
     borderRadius: '8px',
     border: '1px solid #E0E0E0',
     backgroundColor: '#FFFFFF',
     color: '#333333',
-    fontSize: '16px', // Increased font size
+    fontSize: '16px', 
   },
   input: {
     width: '100%',
-    padding: '14px', // Slightly larger padding
+    padding: '14px', 
     borderRadius: '8px',
     border: '1px solid #E0E0E0',
     backgroundColor: '#FFFFFF',
     color: '#333333',
-    fontSize: '16px', // Increased font size
+    fontSize: '16px', 
     marginBottom: '10px',
   },
   textarea: {
     width: '100%',
-    padding: '14px', // Slightly larger padding
+    padding: '14px', 
     borderRadius: '8px',
     border: '1px solid #E0E0E0',
     backgroundColor: '#FFFFFF',
     color: '#333333',
-    fontSize: '16px', // Increased font size
-    height: '100px', // Slightly larger height
+    fontSize: '16px', 
+    height: '100px', 
     resize: 'none',
     marginBottom: '10px',
   },
   uploadButton: {
     width: '100%',
-    padding: '14px', // Larger padding
+    padding: '14px', 
     borderRadius: '8px',
     border: 'none',
     backgroundColor: '#4B0082',

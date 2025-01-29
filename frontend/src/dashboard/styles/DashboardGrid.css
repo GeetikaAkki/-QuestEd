@@ -45,7 +45,6 @@
   background-color: #E85D5D;
 }
 
-/* Add responsive breakpoint */
 @media (max-width: 1024px) {
   .dashboard-grid {
       grid-template-columns: 1fr;

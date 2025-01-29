@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const CourseDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate(); // Hook to navigate between pages
+  const navigate = useNavigate(); 
 
   const courses = [
     { id: "cs", name: "Computer Science", path: "/computer-science" },
@@ -58,7 +58,7 @@ const CourseDropdown = () => {
               <button
                 key={course.id}
                 onClick={() => {
-                  navigate(course.path); // Navigate to the corresponding page
+                  navigate(course.path); 
                   setIsOpen(false);
                 }}
                 style={{

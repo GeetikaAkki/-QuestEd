@@ -9,7 +9,7 @@
     position: absolute;
     opacity: 0.7;
     animation: pulse 3s infinite ease-in-out;
-    z-index: 0; /* Ensures icons are behind the content */
+    z-index: 0; 
   }
   
   .pencil {
@@ -22,7 +22,7 @@
     font-size: 60px;
   }
   
-  /* Adjusted positions to avoid overlap */
+
   .icon-1 { top: 8%; left: 5%; }
   .icon-2 { top: 20%; right: 10%; }
   .icon-3 { bottom: 15%; left: 10%; }
@@ -31,7 +31,7 @@
   .icon-6 { bottom: 50%; right: 15%; transform: rotate(-10deg); }
   .icon-7 { top: 5%; right: 20%; transform: rotate(8deg); }
   
-  /* Hide some icons on smaller screens */
+
   @media screen and (max-width: 1200px) {
     .icon-1, .icon-2, .icon-5, .icon-6 { display: none; }
   }

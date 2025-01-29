@@ -12,10 +12,12 @@ import CLang from "./learning/clang";
 import QuizTemplate from "./dashboard/QuizTemplate";
 import Wellbeing from "./dashboard/Wellbeing"; 
 import Feedback from "./components/Feedback"
+import DailyQuiz from "./dashboard/DailyQuiz";
+import DailyQBoard from "./dashboard/DailyQBoard";
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const showSidebar = ["/dashboard", "/computer-science", "/course", "/quiz", "/wellbeing", "/feedback"].includes(location.pathname);
+  const showSidebar = ["/dashboard", "/computer-science", "/course", "/quiz", "/wellbeing", "/feedback", "/learning/c","/dailyqboard","/dailyquiz"].includes(location.pathname);
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
@@ -45,6 +47,8 @@ const App = () => {
           <Route path="/quiz" element={<QuizTemplate />} />
           <Route path="/wellbeing" element={<Wellbeing />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/dailyquiz" element={<DailyQuiz />} />
+          <Route path="/dailyqboard" element={<DailyQBoard />} />
         </Routes>
       </Layout>
     </Router>

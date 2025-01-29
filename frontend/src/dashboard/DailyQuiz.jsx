@@ -12,58 +12,58 @@ const Background = () => (
 
 const defaultQuestions = [
   {
-    question: "Which of the following is a valid C identifier?",
-    options: ["123variable", "_variableName", "variable-name", "var iable"],
-    answer: "_variableName"
+    question: "Which of the following is a valid C++ identifier?",
+    options: ["123_var", "_myVariable", "my-variable", "break"],
+    answer: "_myVariable"
   },
   {
-    question: "Which keyword is used to define a constant in C?",
-    options: ["const", "constant", "var", "define"],
+    question: "Which keyword is used to define a constant in C++?",
+    options: ["const", "#define", "constant", "let"],
     answer: "const"
   },
   {
-    question: "What is the format specifier for printing an integer in C?",
-    options: ["%d", "%c", "%f", "%s"],
-    answer: "%d"
+    question: "What is used for output stream in C++?",
+    options: ["cout <<", "cout >>", "cin <<", "printf()"],
+    answer: "cout <<"
   },
   {
-    question: "Which of the following is used to take input in C?",
-    options: ["cin", "scanf", "input", "read"],
-    answer: "scanf"
+    question: "Which of the following is used to take input in C++?",
+    options: ["cout", "cin", "scanf", "println"],
+    answer: "cin"
   },
   {
-    question: "What is the default return type of a function in C if not specified?",
-    options: ["void", "int", "float", "char"],
-    answer: "int"
+    question: "Which access specifier makes class members public by default?",
+    options: ["class", "struct", "union", "none"],
+    answer: "struct"
   },
   {
-    question: "Which loop is guaranteed to execute at least once?",
-    options: ["for", "while", "do-while", "none"],
-    answer: "do-while"
+    question: "What is the correct way to create an object in C++?",
+    options: ["MyClass obj();", "new MyClass;", "MyClass obj;", "create MyClass;"],
+    answer: "MyClass obj;"
   },
   {
-    question: "Which operator is used to access the address of a variable?",
+    question: "Which operator is used for pointer declaration in C++?",
     options: ["*", "&", "->", "@"],
-    answer: "&"
+    answer: "*"
   },
   {
-    question: "Which data type is used to store a single character in C?",
-    options: ["char", "string", "int", "float"],
-    answer: "char"
+    question: "What is the size of bool data type in C++?",
+    options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
+    answer: "1 byte"
   },
   {
-    question: "What is the result of 5 / 2 in C when both operands are integers?",
-    options: ["2.5", "2", "3", "error"],
+    question: "What is the result of 5/2 in C++ when both operands are integers?",
+    options: ["2.5", "2", "3", "2.0"],
     answer: "2"
   },
   {
-    question: "Which header file is required for using printf() and scanf()?",
-    options: ["stdio.h", "stdlib.h", "math.h", "conio.h"],
-    answer: "stdio.h"
+    question: "Which header file is required for using string class in C++?",
+    options: ["<string>", "<string.h>", "<strings>", "<iostream>"],
+    answer: "<string>"
   }
 ];
 
-const Quiz = ({ questions = defaultQuestions }) => {
+const DailyQuiz = ({ questions = defaultQuestions }) => {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -72,9 +72,10 @@ const Quiz = ({ questions = defaultQuestions }) => {
 
   useEffect(() => {
     if (submitted) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         navigate('/learning/c');
       }, 10000);
+      return () => clearTimeout(timer);
     }
   }, [submitted, navigate]);
 
@@ -90,17 +91,10 @@ const Quiz = ({ questions = defaultQuestions }) => {
   }
 
   const handleOptionSelect = (questionId, option) => {
-    setSelectedAnswers(prev => {
-      if (prev[questionId] === option) {
-        const newAnswers = { ...prev };
-        delete newAnswers[questionId];
-        return newAnswers;
-      }
-      return {
-        ...prev,
-        [questionId]: option
-      };
-    });
+    setSelectedAnswers(prev => ({
+      ...prev,
+      [questionId]: prev[questionId] === option ? undefined : option
+    }));
   };
 
   const handleSubmit = () => {
@@ -177,4 +171,4 @@ const Quiz = ({ questions = defaultQuestions }) => {
   );
 };
 
-export default Quiz;
+export default DailyQuiz;

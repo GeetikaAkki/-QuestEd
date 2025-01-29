@@ -1,23 +1,23 @@
 .sidebar {
-  width: 300px;  /* Increased from 256px */
+  width: 300px;  
   background-color: #F4804C;
-  padding: 32px;  /* Increased padding */
+  padding: 32px; 
   color: white;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 1000;
-  text-align: center;  /* Center align all text */
+  text-align: center;  
 }
 
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;  /* Center the logo */
+  justify-content: center;  
   gap: 12px;
-  margin-bottom: 48px;  /* Increased margin */
-  font-size: 32px;  /* Increased font size */
+  margin-bottom: 48px;  
+  font-size: 32px;  
   font-weight: bold;
   cursor: pointer;
   color: white;
@@ -25,27 +25,27 @@
 }
 
 .book-icon {
-  font-size: 36px;  /* Increased icon size */
+  font-size: 36px;  
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 16px;  /* Increased gap between menu items */
-  align-items: center;  /* Center menu items */
+  gap: 16px;  
+  align-items: center;  
   width: 100%;
 }
 
 .menu-item {
-  padding: 16px;  /* Increased padding */
-  border-radius: 12px;  /* Increased border radius */
+  padding: 16px;  
+  border-radius: 12px;  
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 20px;  /* Increased font size */
+  font-size: 20px;  
   color: white;
   text-decoration: none;
   display: block;
-  width: 100%;  /* Make items take full width */
+  width: 100%;  
   text-align: center;
 }
 
@@ -59,12 +59,11 @@
   color: white;
 }
 
-/* Add styles for the main content area */
 .main-content {
-  margin-left: 300px;  /* Match sidebar width */
+  margin-left: 300px;  
   padding: 32px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* 2 columns */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 24px;
   min-height: 100vh;
 }
@@ -72,7 +71,7 @@
 .content-box {
   padding: 32px;
   border-radius: 16px;
-  min-height: 300px;  /* Set minimum height */
+  min-height: 300px;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +84,7 @@
   transform: scale(1.02);
 }
 
-.box-1 { background-color: #4CAF50; }  /* Green */
-.box-2 { background-color: #2196F3; }  /* Blue */
-.box-3 { background-color: #f44336; }  /* Red */
-.box-4 { background-color: #E91E63; }  /* Pink */
+.box-1 { background-color: #4CAF50; }  
+.box-2 { background-color: #2196F3; }  
+.box-3 { background-color: #f44336; }  
+.box-4 { background-color: #E91E63; }  

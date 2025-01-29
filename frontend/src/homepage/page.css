@@ -164,7 +164,7 @@ body {
   border-radius: 50%;
 }
 
-/* styles/features.css */
+
 .features-section {
   background-color: var(--primary-color);
   border-radius: 16px;
@@ -200,7 +200,6 @@ body {
   font-size: 0.875rem;
 }
 
-/* styles/learning-experience.css */
 .learning-section {
   padding: 4rem 0;
 }
@@ -251,7 +250,6 @@ body {
   color: var(--text-secondary);
 }
 
-/* Animations */
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -262,7 +260,6 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .hero-content {
     flex-direction: column;
