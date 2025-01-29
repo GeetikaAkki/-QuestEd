@@ -49,14 +49,29 @@ const DashboardLayout = () => {
   const floatingIcons = ['📚', '✏', '🎓', '📝', '🔍', '📊', '💡', '🎯', '📓', '🖥'];
 
   return (
-    <div style={{ backgroundColor: '#FDF8EE', minHeight: '100vh', padding: '40px', position: 'relative' }}>
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 0, pointerEvents: 'none' }}>
+    <div style={{ 
+      display: 'flex',
+      backgroundColor: '#FDF8EE', 
+      minHeight: '100vh',
+      width: '100%',
+      position: 'relative',
+      margin: 0,
+      padding: 0
+    }}>
+      <div style={{ 
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        zIndex: 0, 
+        pointerEvents: 'none' 
+      }}>
         {floatingIcons.map((icon, index) => (
           <FloatingIcon key={index} icon={icon} />
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', zIndex: 1, position: 'relative' }}>
+      <div className="dashboard-grid">
         {cards.map((card) => (
           <Card 
             key={card.id} 

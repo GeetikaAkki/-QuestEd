@@ -1,34 +1,40 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./dashboard/Sidebar"; // Sidebar component
-import HomePage from "./homepage/HomePage"; // Home page content
-import LogIn from './components/Login'; // LogIn page content
-import AuthForm from './components/StudSign'; // Sign-in page content
-import Dashboard from "./dashboard/Dashboard"; // Dashboard content
-import ComputerScience from "./dashboard/ComputerScience"; // Computer Science content
-import CourseDropdown from "./dashboard/CourseDropdown"; // Courses dropdown content
-import TeacherPortal from "./components/TeacherPortal";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Sidebar from "./dashboard/Sidebar";
+import HomePage from "./homepage/HomePage";
+import LogIn from './components/Login';
+import AuthForm from './components/StudSign';
+import Dashboard from "./dashboard/Dashboard";
+import ComputerScience from "./dashboard/ComputerScience";
+import CourseDropdown from "./dashboard/CourseDropdown";
+
+const Layout = ({ children }) => {
+  const location = useLocation();
+  const showSidebar = ["/dashboard", "/computer-science", "/course"].includes(location.pathname);
+
+  return (
+    <div style={{ display: "flex", height: "100vh" }}>
+      {showSidebar && <Sidebar />}
+      <div style={{ flex: 1, marginLeft: showSidebar ? "0" : "0", height: "100vh", overflowY: "auto" }}>
+        {children}
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
   return (
     <Router>
-      <div style={{ display: "flex", height: "100vh" }}>
-        {/* Sidebar is outside the route components */}
-        <Sidebar activeRoute="/dashboard" />
-
-        <div style={{ flex: 1, marginLeft: "256px", height: "100vh", overflowY: "auto" }}>
-          {/* Content will change based on route */}
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/log-in" element={<LogIn />} />
-            <Route path="/sign-in" element={<AuthForm />} />
-            <Route path="/dashboard" element={<Dashboard />} /> {/* Directly rendering Dashboard */}
-            <Route path="/computer-science" element={<ComputerScience />} />
-            <Route path="/course" element={<CourseDropdown />} />
-            <Route path="/teacher-portal" element={<TeacherPortal/>}/>
-          </Routes>
-        </div>
-      </div>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/log-in" element={<LogIn />} />
+          <Route path="/sign-in" element={<AuthForm />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/computer-science" element={<ComputerScience />} />
+          <Route path="/course" element={<CourseDropdown />} />
+        </Routes>
+      </Layout>
     </Router>
   );
 };
