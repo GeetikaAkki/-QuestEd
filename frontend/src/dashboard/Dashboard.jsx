@@ -12,21 +12,11 @@ const DashboardLayout = () => {
 
   return (
     <div className="dashboard-layout">
-      <Sidebar activeRoute="Dashboard" />
       <div className="dashboard-grid">
         {cards.map((card) => (
           <div key={card.id} className={`card ${card.className}`}></div>
         ))}
       </div>
-    </div>
-  );
-};
-
-const Sidebar = ({ activeRoute }) => {
-  return (
-    <div className="sidebar">
-      <h2>Sidebar</h2>
-      <p>Active Route: {activeRoute}</p>
     </div>
   );
 };

@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/Sidebar.css';
 
-const Sidebar = ({ activeRoute = 'Dashboard' }) => {
+const Sidebar = ({ activeRoute = '/dashboard' }) => {
   const navigationItems = [
-    { id: 1, title: 'Dashboard', route: 'dashboard' },
-    { id: 2, title: 'Course Page', route: 'course' },
-    { id: 3, title: 'Wellbeing', route: 'wellbeing' },
-    { id: 4, title: 'Daily Quizs', route: 'quizzes' },
-    { id: 5, title: 'Feedback', route: 'feedback' }
+    { id: 1, title: 'Dashboard', route: '/student' },
+    { id: 2, title: 'Course Page', route: '/course' },
+    { id: 3, title: 'Wellbeing', route: '/wellbeing' },
+    { id: 4, title: 'Daily Quizzes', route: '/quizzes' },
+    { id: 5, title: 'Feedback', route: '/feedback' }
   ];
 
   return (
@@ -18,13 +19,13 @@ const Sidebar = ({ activeRoute = 'Dashboard' }) => {
       </div>
       <nav className="menu">
         {navigationItems.map(item => (
-          <div 
+          <Link 
             key={item.id} 
-            className={`menu-item ${item.title === activeRoute ? 'selected' : ''}`}
-            onClick={() => console.log(`Navigating to ${item.route}`)}
+            to={item.route}
+            className={`menu-item ${item.route === activeRoute ? 'selected' : ''}`}
           >
             {item.title}
-          </div>
+          </Link>
         ))}
       </nav>
     </div>
