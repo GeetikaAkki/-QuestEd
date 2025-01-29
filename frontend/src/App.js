@@ -7,6 +7,8 @@ import AuthForm from './components/StudSign';
 import Dashboard from "./dashboard/Dashboard";
 import ComputerScience from "./dashboard/ComputerScience";
 import CourseDropdown from "./dashboard/CourseDropdown";
+import TeacherPortal from "./components/TeacherPortal";
+import CLang from "./learning/clang";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -33,6 +35,8 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/computer-science" element={<ComputerScience />} />
           <Route path="/course" element={<CourseDropdown />} />
+          <Route path="/teacher-portal" element={<TeacherPortal />} />
+          <Route path="/learning/c" element={<CLang />} />
         </Routes>
       </Layout>
     </Router>
