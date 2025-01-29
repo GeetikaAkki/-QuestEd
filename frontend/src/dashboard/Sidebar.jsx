@@ -2,6 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Sidebar.css';
 
+const SidebarItem = ({ title, route, isActive }) => (
+  <Link 
+    to={route}
+    className={`menu-item ${isActive ? 'selected' : ''}`}
+    style={{
+      display: 'block',
+      padding: '12px 16px',
+      textDecoration: 'none',
+      color: isActive ? '#FF6B2B' : '#666',
+      backgroundColor: isActive ? '#FDF8EE' : 'transparent',
+      borderRadius: '8px',
+      marginBottom: '8px',
+    }}
+  >
+    {title}
+  </Link>
+);
+
 const Sidebar = ({ activeRoute = '/dashboard' }) => {
   const navigationItems = [
     { id: 1, title: 'Dashboard', route: '/dashboard' },
@@ -12,20 +30,20 @@ const Sidebar = ({ activeRoute = '/dashboard' }) => {
   ];
 
   return (
-    <div className="sidebar">
-      <div className="logo">
-        <span className="book-icon">📚</span>
+    <div style={{ backgroundColor: '#FF6B2B', padding: '24px', minHeight: '100vh', width: '240px', borderRadius: '16px' }}>
+      <div style={{ fontSize: '24px', fontWeight: 'bold', color: 'white', marginBottom: '24px', display: 'flex', alignItems: 'center' }}>
+        <span role="img" aria-label="book" style={{ marginRight: '8px' }}>📚</span>
         QuestEd
       </div>
-      <nav className="menu">
+
+      <nav>
         {navigationItems.map(item => (
-          <Link 
+          <SidebarItem 
             key={item.id} 
-            to={item.route}
-            className={`menu-item ${item.route === activeRoute ? 'selected' : ''}`}
-          >
-            {item.title}
-          </Link>
+            title={item.title} 
+            route={item.route} 
+            isActive={item.route === activeRoute} 
+          />
         ))}
       </nav>
     </div>

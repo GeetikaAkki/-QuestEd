@@ -1,22 +1,33 @@
 .dashboard-grid {
   flex: 1;
-  padding: 24px;
-  margin-left: 156px; /* Ensure this matches the sidebar width */
+  padding: 32px; /* Increased padding */
+  margin-left: 300px; /* Match the updated sidebar width */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 32px; /* Increased gap for better spacing */
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Light background for contrast */
 }
 
 .card {
-  height: 200px;
+  height: 300px; /* Increased height */
   border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px; /* Larger font size */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card.blue {
@@ -33,4 +44,17 @@
 
 .card.red {
   background-color: #E85D5D;
+}
+
+/* Add responsive breakpoint */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+      grid-template-columns: 1fr;
+      margin-left: 0;
+      padding: 16px;
+  }
+
+  .card {
+      height: 250px;
+  }
 }

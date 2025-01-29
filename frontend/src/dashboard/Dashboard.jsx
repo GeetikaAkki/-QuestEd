@@ -2,54 +2,69 @@ import React from 'react';
 import './styles/DashboardLayout.css';
 import './styles/DashboardGrid.css';
 
+const FloatingIcon = ({ icon }) => (
+  <span className="floating-icon">{icon}</span>
+);
+
+const Card = ({ className, icon, title, description }) => (
+  <div className={`card ${className}`} style={{ padding: '24px', borderRadius: '16px', backgroundColor: className }}>
+    <div style={{ fontSize: '32px', marginBottom: '16px' }}>{icon}</div>
+    <h2 style={{ fontSize: '24px', color: '#333', marginBottom: '8px' }}>{title}</h2>
+    <p style={{ color: '#666' }}>{description}</p>
+  </div>
+);
+
 const DashboardLayout = () => {
   const cards = [
     { 
       id: 1, 
-      className: 'blue', 
+      className: '#90caf9', 
       title: 'Course Page',
       description: 'Access your course materials, lectures, and assignments. Track your progress and view upcoming deadlines.',
-      icon: '📚'  // Books icon for courses
+      icon: '📚'
     },
     { 
       id: 2, 
-      className: 'green', 
+      className: '#a5d6a7', 
       title: 'Well Being',
       description: 'Monitor your mental health, access wellness resources, and schedule counseling sessions.',
-      icon: '🌱'  // Plant icon representing growth and wellness
+      icon: '🌱'
     },
     { 
       id: 3, 
-      className: 'pink', 
+      className: '#f48fb1', 
       title: 'Daily Quizzes',
       description: 'Practice daily assessments to reinforce your learning. View your quiz history and performance analytics.',
-      icon: '✍️'  // Writing hand for quizzes
+      icon: '✍'
     },
     { 
       id: 4, 
-      className: 'red', 
+      className: '#ef9a9a', 
       title: 'Feedback',
       description: 'Submit course feedback, view instructor comments, and participate in peer reviews.',
-      icon: '💭'  // Speech bubble for feedback
+      icon: '💭'
     },
   ];
 
+  const floatingIcons = ['📚', '✏', '🎓', '📝', '🔍', '📊', '💡', '🎯', '📓', '🖥'];
+
   return (
-    <div className="dashboard-layout">
-      <div className="floating-icons">
-        {[...Array(15)].map((_, index) => (
-          <span key={index} className="floating-icon">
-            {['📚', '✏️', '🎓', '📝', '🔍', '📊', '💡', '🎯', '📓', '🖥️'][index % 10]}
-          </span>
+    <div style={{ backgroundColor: '#FDF8EE', minHeight: '100vh', padding: '40px', position: 'relative' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 0, pointerEvents: 'none' }}>
+        {floatingIcons.map((icon, index) => (
+          <FloatingIcon key={index} icon={icon} />
         ))}
       </div>
-      <div className="dashboard-grid">
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', zIndex: 1, position: 'relative' }}>
         {cards.map((card) => (
-          <div key={card.id} className={`card ${card.className}`}>
-            <div className="card-icon">{card.icon}</div>
-            <h2>{card.title}</h2>
-            <p className="card-description">{card.description}</p>
-          </div>
+          <Card 
+            key={card.id} 
+            className={card.className} 
+            icon={card.icon} 
+            title={card.title} 
+            description={card.description} 
+          />
         ))}
       </div>
     </div>
