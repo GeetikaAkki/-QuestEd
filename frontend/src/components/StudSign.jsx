@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
-import { Pencil, Notebook } from 'lucide-react';
 import './StudSign.css';
 import { FaGoogle, FaApple, FaFacebook } from 'react-icons/fa';
 import Background from './Background';
 import './Background.css'
-
-
-const blinkKeyframes = `
-  @keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-`;
 
 const Button = ({ children, onClick, style }) => (
   <button onClick={onClick} style={{ ...buttonStyle, ...style }}>
@@ -28,45 +18,13 @@ const SocialButton = ({ children }) => (
   <button style={socialButtonStyle}>{children}</button>
 );
 
-const Icon = ({ position, index }) => (
-  <div
-    style={{
-      position: 'absolute',
-      left: position.left,
-      top: position.top,
-      bottom: position.bottom,
-      animation: 'blink 3s infinite ease-in-out',
-      zIndex: 0,
-      pointerEvents: 'none',
-    }}
-  >
-    {index % 2 === 0 ? <Notebook size={48} color="black" /> : <Pencil size={48} color="black" />}
-  </div>
-);
-
 const AuthForm = () => {
   const [userType, setUserType] = useState('Student');
-
-  const iconPositions = [
-    { left: '10%', top: '15%' },
-    { left: '25%', top: '35%' },
-    { left: '20%', top: '55%' },
-    { left: '40%', top: '45%' },
-    { left: '50%', top: '60%' },
-    { left: '20%', top: '15%' },
-    { left: '5%', top: '10%' },
-    { left: '22%', bottom: '40%' },
-    { left: '35%', bottom: '15%' },
-    { right: '30%', bottom: '10%' },
-    { right: '44%', bottom: '35%' },
-  ];
 
   return (
     <div>
       <Background/>
     <div style={{ backgroundColor: '#FDF8EE', minHeight: '100vh', padding: '20px', position: 'relative' }}>
-      <style>{blinkKeyframes}</style>
-
       <nav style={{ display: 'flex', alignItems: 'center', marginBottom: '40px' }}>
         <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#4B0082' }}>📚 QuestEd</div>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: '32px' }}>
@@ -121,10 +79,10 @@ const AuthForm = () => {
             <div style={{ textAlign: 'center', color: 'white' }}>
               <p style={{ margin: '16px 0' }}>Or continue with</p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '16px' }}>
-  <SocialButton><FaGoogle size={24} color="#DB4437" /></SocialButton>
-  <SocialButton><FaApple size={24} color="black" /></SocialButton>
-  <SocialButton><FaFacebook size={24} color="#1877F2" /></SocialButton>
-</div>
+                <SocialButton><FaGoogle size={24} color="#DB4437" /></SocialButton>
+                <SocialButton><FaApple size={24} color="black" /></SocialButton>
+                <SocialButton><FaFacebook size={24} color="#1877F2" /></SocialButton>
+              </div>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '16px', color: 'white' }}>
@@ -136,10 +94,6 @@ const AuthForm = () => {
           </div>
         </div>
       </div>
-
-      {iconPositions.map((pos, index) => (
-        <Icon key={index} position={pos} index={index} />
-      ))}
     </div>
     </div>
   );
