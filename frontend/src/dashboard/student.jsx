@@ -1,10 +1,16 @@
 import React from "react";
-import CoursePage from "./CourseDropdown";
+import DashboardLayout from "./Dashboard";
+import './styles/DashboardLayout.css';
+import './styles/Sidebar.css';
+import Sidebar from "./Sidebar"; // Sidebar is now part of the Student component
 
 const Student = () => {
   return (
-    <div>
-      <CoursePage />
+    <div className="student-layout">
+      <div className="content">
+        <DashboardLayout />
+      </div>
+      <Sidebar activeRoute="/student" />
     </div>
   );
 };
