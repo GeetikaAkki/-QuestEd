@@ -1,13 +1,16 @@
 import React from "react";
 import { BookOpen, Code, Database, Cloud, Brain, Globe } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ComputerScience = () => {
+  const navigate = useNavigate();
+
   const courses = [
-    { title: "C Programming", description: "Learn fundamentals of C programming", icon: <Code size={24} />, progress: "60%" },
-    { title: "C++ Programming", description: "Object-oriented programming with C++", icon: <Code size={24} />, progress: "45%" },
-    { title: "Python", description: "Modern programming with Python", icon: <Code size={24} />, progress: "75%" },
-    { title: "Data Structures", description: "Advanced data structures implementation", icon: <Database size={24} />, progress: "30%" },
-    { title: "Algorithms", description: "Problem-solving and algorithm design", icon: <Brain size={24} />, progress: "50%" },
+    { title: "C Programming", description: "Learn fundamentals of C programming", icon: <Code size={24} />, progress: "60%", path: "/learning/clang" },
+    { title: "C++ Programming", description: "Object-oriented programming with C++", icon: <Code size={24} />, progress: "45%", path: "/learning/cobjectlang" },
+    { title: "Python", description: "Modern programming with Python", icon: <Code size={24} />, progress: "75%", path: "/learning/python" },
+    { title: "Data Structures", description: "Advanced data structures implementation", icon: <Database size={24} />, progress: "30%", path: "/learning/dsa" },
+    { title: "Algorithms", description: "Problem-solving and algorithm design", icon: <Brain size={24} />, progress: "50%", path: "/learning/daa" },
     { title: "Web Development", description: "Full-stack web development", icon: <Globe size={24} />, progress: "25%" },
     { title: "Database Systems", description: "Database management and SQL", icon: <Database size={24} />, progress: "40%" },
     { title: "Cloud Computing", description: "Cloud services and deployment", icon: <Cloud size={24} />, progress: "35%" },
@@ -59,6 +62,21 @@ const ComputerScience = () => {
               ></div>
             </div>
             <p style={{ fontSize: "14px", color: "#666", marginTop: "8px" }}>{course.progress} Complete</p>
+            <button 
+              style={{ 
+                marginTop: "16px", 
+                backgroundColor: "#FF8C00", 
+                color: "white", 
+                padding: "10px 16px", 
+                border: "none", 
+                borderRadius: "8px", 
+                cursor: "pointer", 
+                fontSize: "16px" 
+              }}
+              onClick={() => course.path && navigate(course.path)}
+            >
+              Register
+            </button>
           </div>
         ))}
       </div>
